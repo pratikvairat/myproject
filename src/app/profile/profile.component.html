@@ -1,0 +1,16 @@
+<div class="container mt-5">
+  <div class="card p-4 shadow">
+    <h2 class="mb-3">User Profile</h2>
+    <p *ngIf="user; else noUser">
+      Welcome, <strong>{{ user }}</strong>
+    </p>
+    <button *ngIf="user" class="btn btn-danger mt-3" (click)="logout()">
+      Logout
+    </button>
+    <ng-template #noUser>
+      <p class="text-danger">
+        No user is logged in. Please <a routerLink="/login">login</a>.
+      </p>
+    </ng-template>
+  </div>
+</div>
